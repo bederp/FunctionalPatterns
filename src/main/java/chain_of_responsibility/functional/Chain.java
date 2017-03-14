@@ -8,7 +8,7 @@ enum FruitType {BANANA, APPLE, PEACH, STRAWBERRY}
 
 public class Chain {
     private static Optional<String> parseBanana(FruitType fruit) {
-        System.out.println("B");
+//        System.out.println("B");
 //        System.err.println("B");
         if (FruitType.BANANA.equals(fruit)) {
             return Optional.of("Handled a banana");
@@ -18,7 +18,7 @@ public class Chain {
     }
 
     private static Optional<String> parseApple(FruitType fruit) {
-        System.out.println("A");
+//        System.out.println("A");
 //        System.err.println("A");
         if (FruitType.APPLE.equals(fruit)) {
             return Optional.of("Handled an apple");
@@ -28,7 +28,7 @@ public class Chain {
     }
 
     private static Optional<String> parsePeach(FruitType fruit) {
-        System.out.println("P");
+//        System.out.println("P");
 //        System.err.println("P");
         if (FruitType.PEACH.equals(fruit)) {
             return Optional.of("Handled a peach");
@@ -40,8 +40,8 @@ public class Chain {
     public static void main(String[] args) {
 
 
-//        System.out.println(handle(FruitType.APPLE));
-        System.out.println(handle(FruitType.STRAWBERRY));
+        System.out.println(handle(FruitType.APPLE));
+//        System.out.println(handle(FruitType.STRAWBERRY));
 
 
     }
@@ -52,9 +52,10 @@ public class Chain {
                 Chain::parseApple,
                 Chain::parseBanana,
                 Chain::parsePeach)
-                .flatMap(f -> Stream.of(f.apply(fruit)))
+                .map(f -> f.apply(fruit))
                 .filter(Optional::isPresent)
+                .findFirst()
                 .map(Optional::get)
-                .findFirst().orElseThrow(() -> new RuntimeException("No suitable handler"));
+                .orElseThrow(() -> new RuntimeException("No suitable handler"));
     }
 }
