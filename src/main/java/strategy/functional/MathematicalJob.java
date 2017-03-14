@@ -1,9 +1,5 @@
 package strategy.functional;
 
-/**
- * Created by kinder112 on 05.02.2017.
- */
-
 @FunctionalInterface
 interface MathematicalStrategy {
     //BinaryOperator<Integer>
@@ -26,7 +22,7 @@ class Context {
     }
 }
 
-public class MathematicalJob {
+class MathematicalJob {
 
     public static void main(String[] args) {
         Context context = new Context((x, y) -> x + y);

@@ -1,9 +1,5 @@
 package strategy.gof;
 
-/**
- * Created by kinder112 on 05.02.2017.
- */
-
 interface MathematicalStrategy {
     int execute(int num1, int num2);
 }
@@ -37,7 +33,7 @@ class Context {
     }
 }
 
-public class MathematicalJob {
+class MathematicalJob {
 
     public static void main(String[] args) {
         Context context = new Context(new Addition());

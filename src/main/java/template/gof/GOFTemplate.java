@@ -1,9 +1,5 @@
 package template.gof;
 
-/**
- * Created by kinder112 on 05.02.2017.
- */
-
 abstract class CookingTemplate{
     void cook(){
         prepareIngredients();
@@ -39,7 +35,7 @@ class CookEggs extends CookingTemplate {
 }
 
 
-public class GOFTemplate {
+class GOFTemplate {
     public static void main(String[] args) {
 
         final CookChicken chicken = new CookChicken();

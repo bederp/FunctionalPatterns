@@ -15,10 +15,10 @@ interface Command {
  * The Invoker class
  */
 class Switch {
-    private List<Command> history = new ArrayList<>();
+    private final List<Command> history = new ArrayList<>();
 
     void storeAndExecute(final Command cmd) {
-        history.add(cmd); // optional
+        history.add(cmd); // optional "UNDO" functionality
         cmd.execute();
     }
 }
@@ -37,7 +37,7 @@ class Light {
     }
 }
 
-public final class PressSwitch {
+final class PressSwitch {
     public static void main(final String[] arguments) {
 
         final Light lamp = new Light();

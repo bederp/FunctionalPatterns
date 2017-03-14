@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 enum FruitType {BANANA, APPLE, PEACH, STRAWBERRY}
 
-public class Chain {
+class Chain {
     private static Optional<String> parseBanana(FruitType fruit) {
 //        System.out.println("B");
 //        System.err.println("B");

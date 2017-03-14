@@ -2,10 +2,6 @@ package decorator.functional;
 
 import java.util.function.UnaryOperator;
 
-/**
- * Created by kinder112 on 07.02.2017.
- */
-
 interface Sandwich {
     String prepare();
 }
@@ -18,7 +14,7 @@ class PlainSandwich implements Sandwich {
     }
 }
 
-public class SandwichExample {
+class SandwichExample {
 
     private static class SandwichDecorator implements UnaryOperator<String> {
         @Override

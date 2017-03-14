@@ -60,7 +60,7 @@ class PeachParser extends FruitParser {
     }
 }
 
-public class Chain {
+class Chain {
     public static void main(String[] args) {
         FruitParser banana = new BananaParser();
         FruitParser apple = new AppleParser();

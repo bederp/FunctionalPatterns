@@ -47,7 +47,7 @@ class Value implements MathExpression {
 }
 
 class Parser {
-    private Stack<MathExpression> stack = new Stack<>();
+    private final Stack<MathExpression> stack = new Stack<>();
 
     int evaluate(String s) {
         for (String token : s.split(" ")) {
@@ -71,7 +71,7 @@ class Parser {
     }
 }
 
-public class Interpreter {
+class Interpreter {
     public static void main(String[] args) {
         String s = "1 2 3 4 - + -";
         System.out.println(new Parser().evaluate(s));

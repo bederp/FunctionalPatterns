@@ -13,7 +13,7 @@ interface MathExpression {
 }
 
 class Parser {
-    private Stack<Integer> stack = new Stack<>();
+    private final Stack<Integer> stack = new Stack<>();
 
     int evaluate(String s) {
         for (String token : s.split(" ")) {
@@ -28,7 +28,7 @@ class Parser {
     }
 }
 
-public class Interpreter {
+class Interpreter {
     public static void main(String[] args) {
         String s = "1 2 3 4 - + -";
         System.out.println(new Parser().evaluate(s));

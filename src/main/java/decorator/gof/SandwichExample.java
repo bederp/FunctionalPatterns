@@ -1,9 +1,5 @@
 package decorator.gof;
 
-/**
- * Created by kinder112 on 07.02.2017.
- */
-
 interface Sandwich {
     String prepare();
 }
@@ -45,7 +41,7 @@ class CheeseDecorator extends SandwichDecorator {
     }
 }
 
-public class SandwichExample {
+class SandwichExample {
     public static void main(String[] args) {
         final PlainSandwich plainSandwich = new PlainSandwich();
         final SausageDecorator sausageSandwich = new SausageDecorator(plainSandwich);

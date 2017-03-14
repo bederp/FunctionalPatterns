@@ -14,7 +14,7 @@ interface Command {
  * The Invoker class
  */
 class Switch {
-    private List<Command> history = new ArrayList<>();
+    private final List<Command> history = new ArrayList<>();
 
     void storeAndExecute(final Command cmd) {
         history.add(cmd); // optional
@@ -40,7 +40,7 @@ class Light {
  * The Command for turning on the light - ConcreteCommand #1
  */
 class FlipUpCommand implements Command {
-    private Light theLight;
+    private final Light theLight;
 
     FlipUpCommand(final Light light) {
         this.theLight = light;
@@ -56,7 +56,7 @@ class FlipUpCommand implements Command {
  * The Command for turning off the light - ConcreteCommand #2
  */
 class FlipDownCommand implements Command {
-    private Light theLight;
+    private final Light theLight;
 
     FlipDownCommand(final Light light) {
         this.theLight = light;
@@ -69,7 +69,7 @@ class FlipDownCommand implements Command {
 }
 
 /* The test class or client */
-public class PressSwitch {
+class PressSwitch {
     public static void main(final String[] arguments) {
 
         final Light lamp = new Light();
