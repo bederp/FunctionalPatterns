@@ -1,10 +1,7 @@
 package chain_of_responsibility.gof;
 
-/**
- * Created by kinder112 on 12.02.2017.
- */
-
 enum FruitType {BANANA, APPLE, PEACH, STRAWBERRY}
+
 abstract class FruitParser {
     private FruitParser successor;
 
@@ -62,8 +59,6 @@ class PeachParser extends FruitParser {
         System.out.println("Handled a peach");
     }
 }
-
-
 
 public class Chain {
     public static void main(String[] args) {

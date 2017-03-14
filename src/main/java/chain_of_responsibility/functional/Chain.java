@@ -4,17 +4,11 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-/**
- * Created by kinder112 on 12.02.2017.
- */
-
-enum FruitType {
-    BANANA, APPLE, PEACH, STRAWBERRY
-}
+enum FruitType {BANANA, APPLE, PEACH, STRAWBERRY}
 
 public class Chain {
     private static Optional<String> parseBanana(FruitType fruit) {
-//        System.out.println("B");
+        System.out.println("B");
         if (FruitType.BANANA.equals(fruit)) {
             return Optional.of("Handled a banana");
         } else {
@@ -23,7 +17,7 @@ public class Chain {
     }
 
     private static Optional<String> parseApple(FruitType fruit) {
-//        System.out.println("A");
+        System.out.println("A");
         if (FruitType.APPLE.equals(fruit)) {
             return Optional.of("Handled an apple");
         } else {
@@ -32,7 +26,7 @@ public class Chain {
     }
 
     private static Optional<String> parsePeach(FruitType fruit) {
-//        System.out.println("P");
+        System.out.println("P");
         if (FruitType.PEACH.equals(fruit)) {
             return Optional.of("Handled a peach");
         } else {
@@ -42,17 +36,22 @@ public class Chain {
 
     public static void main(String[] args) {
 
-        String s = Stream.<Function<FruitType, Optional<String>>>of(
+
+//        System.out.println(handle(FruitType.APPLE));
+        System.out.println(handle(FruitType.STRAWBERRY));
+
+
+    }
+
+    private static String handle(FruitType fruit) {
+        //Sequentially ordered
+        return Stream.<Function<FruitType, Optional<String>>>of(
                 Chain::parseApple,
                 Chain::parseBanana,
                 Chain::parsePeach)
-                .map(f -> f.apply(FruitType.APPLE))
+                .flatMap(f -> Stream.of(f.apply(fruit)))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .findFirst().orElseThrow(() -> new RuntimeException("No suitable handler"));
-
-        System.out.println(s);
-
-
     }
 }
