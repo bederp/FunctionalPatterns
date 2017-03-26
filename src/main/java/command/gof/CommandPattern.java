@@ -39,10 +39,10 @@ class Light {
 /**
  * The Command for turning on the light - ConcreteCommand #1
  */
-class FlipUpCommand implements Command {
+class SwitchOnCommand implements Command {
     private final Light theLight;
 
-    FlipUpCommand(final Light light) {
+    SwitchOnCommand(final Light light) {
         this.theLight = light;
     }
 
@@ -55,10 +55,10 @@ class FlipUpCommand implements Command {
 /**
  * The Command for turning off the light - ConcreteCommand #2
  */
-class FlipDownCommand implements Command {
+class SwitchOffCommand implements Command {
     private final Light theLight;
 
-    FlipDownCommand(final Light light) {
+    SwitchOffCommand(final Light light) {
         this.theLight = light;
     }
 
@@ -68,16 +68,18 @@ class FlipDownCommand implements Command {
     }
 }
 
-/* The test class or client */
-class PressSwitch {
+/**
+ *The test class or client
+ */
+class CommandPattern {
     public static void main(final String[] arguments) {
 
         final Light lamp = new Light();
-        final Command switchUp = new FlipUpCommand(lamp);
-        final Command switchDown = new FlipDownCommand(lamp);
+        final Command switchOn = new SwitchOnCommand(lamp);
+        final Command switchOff = new SwitchOffCommand(lamp);
         final Switch mySwitch = new Switch();
 
-        mySwitch.storeAndExecute(switchUp);
-        mySwitch.storeAndExecute(switchDown);
+        mySwitch.storeAndExecute(switchOn);
+        mySwitch.storeAndExecute(switchOff);
     }
 }

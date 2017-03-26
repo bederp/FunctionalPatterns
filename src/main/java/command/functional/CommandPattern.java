@@ -37,7 +37,7 @@ class Light {
     }
 }
 
-final class PressSwitch {
+final class CommandPattern {
     public static void main(final String[] arguments) {
 
         final Light lamp = new Light();
