@@ -1,5 +1,6 @@
 package visitor.functional;
 
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.function.Function;
 
@@ -74,11 +75,19 @@ public class Visitor {
         Rectangle rectangle = new Rectangle(2, 4);
 
         PatternMatching pm = new PatternMatching(
-                inCaseOf(Circle.class, x -> System.out.printf("Area of circle with radius %d is %f\n", x.radius, Math.pow(x.radius, 2.0) * Math.PI)),
-                inCaseOf(Rectangle.class, x -> System.out.printf("Area of rectangle with width %d and height %d is %d\n", x.width, x.height, x.width * x.height))
+                inCaseOf(Circle.class, Visitor::circleVisitor),
+                inCaseOf(Rectangle.class, Visitor::rectangleVisitor)
         );
 
         pm.matchFor(circle);
         pm.matchFor(rectangle);
+    }
+
+    private static PrintStream rectangleVisitor(Rectangle x) {
+        return System.out.printf("Area of rectangle with width %d and height %d is %d\n", x.width, x.height, x.width * x.height);
+    }
+
+    private static PrintStream circleVisitor(Circle x) {
+        return System.out.printf("Area of circle with radius %d is %f\n", x.radius, Math.pow(x.radius, 2.0) * Math.PI);
     }
 }
