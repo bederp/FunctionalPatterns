@@ -5,9 +5,9 @@ interface Shape {
 }
 
 class Circle implements Shape {
-    final int radius;
+    final double radius;
 
-    Circle(int radius) {
+    Circle(double radius) {
         this.radius = radius;
     }
 
@@ -18,10 +18,10 @@ class Circle implements Shape {
 }
 
 class Rectangle implements Shape {
-    final int width;
-    final int height;
+    final double width;
+    final double height;
 
-    Rectangle(int width, int height) {
+    Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
@@ -43,12 +43,12 @@ class AreaCalculatingVisitor implements ShapeVisitor {
 
     @Override
     public void visit(Circle circle) {
-        System.out.printf("Area of circle with radius %d is %f\n", circle.radius, Math.pow(circle.radius, 2.0) * Math.PI);
+        System.out.printf("Area of circle with radius %.2f is %.2f%n", circle.radius, Math.pow(circle.radius, 2.0) * Math.PI);
     }
 
     @Override
     public void visit(Rectangle rectangle) {
-        System.out.printf("Area of rectangle with width %d and height %d is %d\n", rectangle.width, rectangle.height, rectangle.width * rectangle.height);
+        System.out.printf("Area of rectangle with width %.2f and height %.2f is %.2f%n", rectangle.width, rectangle.height, rectangle.width * rectangle.height);
     }
 }
 

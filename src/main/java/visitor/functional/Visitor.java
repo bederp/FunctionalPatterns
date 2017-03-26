@@ -7,18 +7,18 @@ import java.util.function.Function;
 import static visitor.functional.ClassPattern.inCaseOf;
 
 class Circle {
-    final int radius;
+    final double radius;
 
-    Circle(int radius) {
+    Circle(double radius) {
         this.radius = radius;
     }
 }
 
 class Rectangle {
-    final int width;
-    final int height;
+    final double width;
+    final double height;
 
-    Rectangle(int width, int height) {
+    Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
@@ -84,10 +84,10 @@ public class Visitor {
     }
 
     private static PrintStream rectangleVisitor(Rectangle x) {
-        return System.out.printf("Area of rectangle with width %d and height %d is %d\n", x.width, x.height, x.width * x.height);
+        return System.out.printf("Area of rectangle with width %.2f and height %.2f is %.2f%n", x.width, x.height, x.width * x.height);
     }
 
     private static PrintStream circleVisitor(Circle x) {
-        return System.out.printf("Area of circle with radius %d is %f\n", x.radius, Math.pow(x.radius, 2.0) * Math.PI);
+        return System.out.printf("Area of circle with radius %.2f is %.2f%n", x.radius, Math.pow(x.radius, 2.0) * Math.PI);
     }
 }
