@@ -7,7 +7,6 @@ interface MathExpression {
 }
 
 class Addition implements MathExpression {
-
     private final int value;
 
     Addition(MathExpression left, MathExpression right) {

@@ -38,12 +38,8 @@ class Chain {
     }
 
     public static void main(String[] args) {
-
-
         System.out.println(handle(FruitType.APPLE));
 //        System.out.println(handle(FruitType.STRAWBERRY));
-
-
     }
 
     private static String handle(FruitType fruit) {

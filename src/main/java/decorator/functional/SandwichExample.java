@@ -7,7 +7,6 @@ interface Sandwich {
 }
 
 class PlainSandwich implements Sandwich {
-
     @Override
     public String prepare() {
         return "Sandwich";
@@ -15,7 +14,6 @@ class PlainSandwich implements Sandwich {
 }
 
 class SandwichExample {
-
     private static class SandwichDecorator implements UnaryOperator<String> {
         @Override
         public String apply(String s) {
@@ -30,6 +28,5 @@ class SandwichExample {
                         .andThen(s -> s + " with cheese")
                         .apply(new PlainSandwich().prepare())
         );
-
     }
 }

@@ -27,11 +27,9 @@ class Switch {
  * The Receiver class
  */
 class Light {
-
     void turnOn() {
         System.out.println("The light is on");
     }
-
     void turnOff() {
         System.out.println("The light is off");
     }
@@ -39,7 +37,6 @@ class Light {
 
 final class CommandPattern {
     public static void main(final String[] arguments) {
-
         final Light lamp = new Light();
         final Switch mySwitch = new Switch();
 
