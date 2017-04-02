@@ -39,19 +39,24 @@ class Chain {
 
     public static void main(String[] args) {
         System.out.println(handle(FruitType.APPLE));
-//        System.out.println(handle(FruitType.STRAWBERRY));
+//      System.out.println(handle(FruitType.STRAWBERRY));
     }
 
     private static String handle(FruitType fruit) {
-        //Sequentially ordered
-        return Stream.<Function<FruitType, Optional<String>>>of(
-                Chain::parseApple,
-                Chain::parseBanana,
-                Chain::parsePeach)
+        return createChain()
                 .map(f -> f.apply(fruit))
                 .filter(Optional::isPresent)
                 .findFirst()
                 .map(Optional::get)
                 .orElseThrow(() -> new RuntimeException("No suitable handler"));
+
+    }
+
+    private static Stream<Function<FruitType, Optional<String>>> createChain() {
+        //Sequentially ordered
+        return Stream.of(
+                Chain::parseApple,
+                Chain::parseBanana,
+                Chain::parsePeach);
     }
 }

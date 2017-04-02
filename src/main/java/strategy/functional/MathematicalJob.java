@@ -2,7 +2,7 @@ package strategy.functional;
 
 @FunctionalInterface
 interface MathematicalStrategy {
-    //BinaryOperator<Integer>
+    //IntBinaryOperation
     int execute(int num1, int num2);
 }
 
@@ -23,7 +23,6 @@ class Context {
 }
 
 class MathematicalJob {
-
     public static void main(String[] args) {
         Context context = new Context((x, y) -> x + y);
         System.out.println("Addition Strategy: " + context.execute(5, 7));
@@ -31,5 +30,4 @@ class MathematicalJob {
         context.setStrategy((x, y) -> x - y);
         System.out.println("Subtraction strategy " + context.execute(5, 7));
     }
-
 }

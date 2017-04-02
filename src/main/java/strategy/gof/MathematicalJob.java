@@ -34,7 +34,6 @@ class Context {
 }
 
 class MathematicalJob {
-
     public static void main(String[] args) {
         Context context = new Context(new Addition());
         System.out.println("Addition Strategy: " + context.doTheJob(5, 7));
@@ -42,5 +41,4 @@ class MathematicalJob {
         context.setStrategy(new Subtraction());
         System.out.println("Subtraction strategy " + context.doTheJob(5, 7));
     }
-
 }

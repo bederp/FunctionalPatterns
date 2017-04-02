@@ -14,7 +14,5 @@ class IteratorExample {
         for (Integer integer : integers) {
             System.out.println(integer);
         }
-
-
     }
 }

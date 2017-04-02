@@ -4,7 +4,7 @@ abstract class CookingTemplate{
     void cook(){
         prepareIngredients();
         cookIngredients();
-        cleanup();
+        cleanUp();
     }
 
     abstract void prepareIngredients();
@@ -13,7 +13,7 @@ abstract class CookingTemplate{
         System.out.println("Cooking prepared ingredients");
     }
 
-    private void cleanup() {
+    private void cleanUp() {
         System.out.println("Cleaning up the mess");
     }
 }
@@ -43,6 +43,5 @@ class GOFTemplate {
 
         final CookEggs eggs = new CookEggs();
         eggs.cook();
-
     }
 }
