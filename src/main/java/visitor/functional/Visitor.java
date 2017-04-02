@@ -32,8 +32,8 @@ interface Pattern {
 
 class ClassPattern<T> implements Pattern {
 
-    private Class<T> clazz;
-    private Function<T, Object> function;
+    private final Class<T> clazz;
+    private final Function<T, Object> function;
 
     private ClassPattern(Class<T> clazz, Function<T, Object> function) {
         this.clazz = clazz;
@@ -54,7 +54,7 @@ class ClassPattern<T> implements Pattern {
 }
 
 class PatternMatching {
-    private Pattern[] patterns;
+    private final Pattern[] patterns;
 
     PatternMatching(Pattern... patterns) {
         this.patterns = patterns;
@@ -69,7 +69,7 @@ class PatternMatching {
     }
 }
 
-public class Visitor {
+class Visitor {
     public static void main(String[] args) {
         Circle circle = new Circle(5);
         Rectangle rectangle = new Rectangle(2, 4);
