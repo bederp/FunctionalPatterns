@@ -28,5 +28,12 @@ class SandwichExample {
                         .andThen(s -> s + " with cheese")
                         .apply(new PlainSandwich().prepare())
         );
+
+        System.out.println(
+                new SandwichDecorator()
+                        .compose(s -> s + " with sausage")
+                        .compose(s -> s + " with cheese")
+                        .apply(new PlainSandwich().prepare())
+        );
     }
 }

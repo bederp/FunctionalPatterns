@@ -6,10 +6,10 @@ interface MathematicalStrategy {
     int execute(int num1, int num2);
 }
 
-class Context {
+class MathematicalJob {
     private MathematicalStrategy strategy;
 
-    Context(MathematicalStrategy strategy) {
+    MathematicalJob(MathematicalStrategy strategy) {
         this.strategy = strategy;
     }
 
@@ -22,12 +22,12 @@ class Context {
     }
 }
 
-class MathematicalJob {
+class MathematicalJobExample {
     public static void main(String[] args) {
-        Context context = new Context((x, y) -> x + y);
-        System.out.println("Addition Strategy: " + context.execute(5, 7));
+        MathematicalJob mathematicalJob = new MathematicalJob((x, y) -> x + y);
+        System.out.println("Addition Strategy: " + mathematicalJob.execute(5, 7));
 
-        context.setStrategy((x, y) -> x - y);
-        System.out.println("Subtraction strategy " + context.execute(5, 7));
+        mathematicalJob.setStrategy((x, y) -> x - y);
+        System.out.println("Subtraction strategy " + mathematicalJob.execute(5, 7));
     }
 }

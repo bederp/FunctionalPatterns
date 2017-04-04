@@ -17,10 +17,10 @@ class Subtraction implements MathematicalStrategy {
         return num1 - num2;
     }
 }
-class Context {
+class MathematicalJob {
     private MathematicalStrategy strategy;
 
-    Context(MathematicalStrategy strategy){
+    MathematicalJob(MathematicalStrategy strategy){
         this.strategy = strategy;
     }
 
@@ -33,12 +33,12 @@ class Context {
     }
 }
 
-class MathematicalJob {
+class MathematicalJobExample {
     public static void main(String[] args) {
-        Context context = new Context(new Addition());
-        System.out.println("Addition Strategy: " + context.doTheJob(5, 7));
+        MathematicalJob mathematicalJob = new MathematicalJob(new Addition());
+        System.out.println("Addition Strategy: " + mathematicalJob.doTheJob(5, 7));
 
-        context.setStrategy(new Subtraction());
-        System.out.println("Subtraction strategy " + context.doTheJob(5, 7));
+        mathematicalJob.setStrategy(new Subtraction());
+        System.out.println("Subtraction strategy " + mathematicalJob.doTheJob(5, 7));
     }
 }
