@@ -3,16 +3,10 @@ package command.gof;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * The Command interface
- */
 interface Command {
     void execute();
 }
 
-/**
- * The Invoker class
- */
 class Switch {
     private final List<Command> history = new ArrayList<>();
 
@@ -22,9 +16,6 @@ class Switch {
     }
 }
 
-/**
- * The Receiver class
- */
 class Light {
     void turnOn() {
         System.out.println("The light is on");
@@ -34,9 +25,6 @@ class Light {
     }
 }
 
-/**
- * The Command for turning on the light - ConcreteCommand #1
- */
 class SwitchOnCommand implements Command {
     private final Light theLight;
 
@@ -50,9 +38,6 @@ class SwitchOnCommand implements Command {
     }
 }
 
-/**
- * The Command for turning off the light - ConcreteCommand #2
- */
 class SwitchOffCommand implements Command {
     private final Light theLight;
 
@@ -66,9 +51,6 @@ class SwitchOffCommand implements Command {
     }
 }
 
-/**
- *The test class or client
- */
 class CommandPattern {
     public static void main(final String[] arguments) {
 

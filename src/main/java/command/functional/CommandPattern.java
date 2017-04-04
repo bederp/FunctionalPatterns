@@ -3,17 +3,11 @@ package command.functional;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * The Command functional interface.<br/>
- */
 @FunctionalInterface
 interface Command {
     void execute();
 }
 
-/**
- * The Invoker class
- */
 class Switch {
     private final List<Command> history = new ArrayList<>();
 
@@ -23,9 +17,6 @@ class Switch {
     }
 }
 
-/**
- * The Receiver class
- */
 class Light {
     void turnOn() {
         System.out.println("The light is on");
