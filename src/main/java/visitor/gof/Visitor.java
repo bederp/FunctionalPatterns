@@ -1,5 +1,8 @@
 package visitor.gof;
 
+import static java.lang.Math.PI;
+import static java.lang.Math.pow;
+
 interface Shape {
     void accept(ShapeVisitor visitor);
 }
@@ -43,7 +46,7 @@ class AreaCalculatingVisitor implements ShapeVisitor {
 
     @Override
     public void visit(Circle circle) {
-        System.out.printf("Area of circle with radius %.2f is %.2f%n", circle.radius, Math.pow(circle.radius, 2.0) * Math.PI);
+        System.out.printf("Area of circle with radius %.2f is %.2f%n", circle.radius, pow(circle.radius, 2.0) * PI);
     }
 
     @Override

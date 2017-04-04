@@ -62,14 +62,14 @@ class PeachParser extends FruitParser {
 
 class Chain {
     public static void main(String[] args) {
-        FruitParser banana = new BananaParser();
         FruitParser apple = new AppleParser();
+        FruitParser banana = new BananaParser();
         FruitParser peach = new PeachParser();
 
-        banana.setSuccessor(apple);
-        apple.setSuccessor(peach);
+        apple.setSuccessor(banana);
+        banana.setSuccessor(peach);
 
-        banana.handleFruit(FruitType.PEACH);
+        banana.handleFruit(FruitType.APPLE);
 //        banana.handleFruit(FruitType.STRAWBERRY);
     }
 }

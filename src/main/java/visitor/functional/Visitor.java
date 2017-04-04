@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.function.Function;
 
+import static java.lang.Math.*;
+import static java.lang.Math.pow;
 import static visitor.functional.ClassPattern.inCaseOf;
 
 class Circle {
@@ -89,6 +91,6 @@ class Visitor {
     }
 
     private static PrintStream circleVisitor(Circle x) {
-        return System.out.printf("Area of circle with radius %.2f is %.2f%n", x.radius, Math.pow(x.radius, 2.0) * Math.PI);
+        return System.out.printf("Area of circle with radius %.2f is %.2f%n", x.radius, pow(x.radius, 2.0) * PI);
     }
 }

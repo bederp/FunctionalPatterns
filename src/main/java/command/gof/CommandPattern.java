@@ -75,9 +75,9 @@ class CommandPattern {
         final Light lamp = new Light();
         final Command switchOn = new SwitchOnCommand(lamp);
         final Command switchOff = new SwitchOffCommand(lamp);
-        final Switch mySwitch = new Switch();
+        final Switch aSwitch = new Switch();
 
-        mySwitch.storeAndExecute(switchOn);
-        mySwitch.storeAndExecute(switchOff);
+        aSwitch.storeAndExecute(switchOff);
+        aSwitch.storeAndExecute(switchOn);
     }
 }
