@@ -64,6 +64,5 @@ class Visitor {
 
         circle.accept(visitor);
         rectangle.accept(visitor);
-
     }
 }
