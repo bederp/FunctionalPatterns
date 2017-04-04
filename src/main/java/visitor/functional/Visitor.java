@@ -44,6 +44,7 @@ class ClassPattern<T> implements Pattern {
         return clazz.isInstance(value);
     }
 
+    @SuppressWarnings("unchecked")
     public Object apply(Object value) {
         return function.apply((T) value);
     }
@@ -60,8 +61,8 @@ class PatternMatching {
         this.patterns = patterns;
     }
 
-    Object matchFor(Object value) {
-        return Arrays.stream(patterns)
+    void matchFor(Object value) {
+        Arrays.stream(patterns)
                 .filter(x -> x.matches(value))
                 .findFirst()
                 .map(x -> x.apply(value))
