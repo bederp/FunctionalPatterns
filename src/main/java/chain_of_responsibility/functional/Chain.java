@@ -9,7 +9,6 @@ enum FruitType {BANANA, APPLE, PEACH, STRAWBERRY}
 class Chain {
     private static Optional<String> parseBanana(FruitType fruit) {
 //        System.out.println("B");
-//        System.err.println("B");
         if (FruitType.BANANA.equals(fruit)) {
             return Optional.of("Handled a banana");
         } else {
@@ -18,8 +17,7 @@ class Chain {
     }
 
     private static Optional<String> parseApple(FruitType fruit) {
-//        System.out.println("A");
-//        System.err.println("A");
+        System.out.println("A");
         if (FruitType.APPLE.equals(fruit)) {
             return Optional.of("Handled an apple");
         } else {
@@ -29,7 +27,6 @@ class Chain {
 
     private static Optional<String> parsePeach(FruitType fruit) {
 //        System.out.println("P");
-//        System.err.println("P");
         if (FruitType.PEACH.equals(fruit)) {
             return Optional.of("Handled a peach");
         } else {
@@ -38,8 +35,8 @@ class Chain {
     }
 
     public static void main(String[] args) {
-        System.out.println(handle(FruitType.APPLE));
-//      System.out.println(handle(FruitType.STRAWBERRY));
+//        System.out.println(handle(FruitType.APPLE));
+      System.out.println(handle(FruitType.STRAWBERRY));
     }
 
     private static String handle(FruitType fruit) {
