@@ -69,7 +69,7 @@ class Chain {
         apple.setSuccessor(banana);
         banana.setSuccessor(peach);
 
-        banana.handleFruit(FruitType.APPLE);
-//        banana.handleFruit(FruitType.STRAWBERRY);
+        apple.handleFruit(FruitType.APPLE);
+//      apple.handleFruit(FruitType.STRAWBERRY);
     }
 }

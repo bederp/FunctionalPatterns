@@ -17,7 +17,7 @@ class Chain {
     }
 
     private static Optional<String> parseApple(FruitType fruit) {
-        System.out.println("A");
+//        System.out.println("A");
         if (FruitType.APPLE.equals(fruit)) {
             return Optional.of("Handled an apple");
         } else {
@@ -35,8 +35,8 @@ class Chain {
     }
 
     public static void main(String[] args) {
-//        System.out.println(handle(FruitType.APPLE));
-      System.out.println(handle(FruitType.STRAWBERRY));
+        System.out.println(handle(FruitType.APPLE));
+//      System.out.println(handle(FruitType.STRAWBERRY));
     }
 
     private static String handle(FruitType fruit) {
@@ -44,8 +44,8 @@ class Chain {
                 .map(f -> f.apply(fruit))
                 .filter(Optional::isPresent)
                 .findFirst()
-                .map(Optional::get)
-                .orElseThrow(() -> new RuntimeException("No suitable handler"));
+                .orElseThrow(() -> new RuntimeException("No suitable handler in chain"))
+                .get();
 
     }
 
