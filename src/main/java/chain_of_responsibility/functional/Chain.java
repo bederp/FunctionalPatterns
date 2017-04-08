@@ -46,7 +46,6 @@ class Chain {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("No suitable handler in chain"))
                 .get();
-
     }
 
     private static Stream<Function<FruitType, Optional<String>>> createChain() {
